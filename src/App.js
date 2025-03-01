@@ -15,20 +15,22 @@ function App() {
   const generateQr = async (event) => {
     event.preventDefault();
     try {
-      setIsLoading(true);
-      const response = await axios.get(api, {
-        params: {
-          text: link,
-          dark:"ffffff",
-          light:"000000"
-        },
-        responseType: "blob",
-      })
-      const blobUrl = URL.createObjectURL(response.data);
-      setTimeout(() => {
-        setQrCode(blobUrl);
-        setIsLoading(false);
-      }, 5000);
+      if(link!=""){
+        setIsLoading(true);
+        const response = await axios.get(api, {
+          params: {
+            text: link,
+            dark:"ffffff",
+            light:"000000"
+          },
+          responseType: "blob",
+        })
+        const blobUrl = URL.createObjectURL(response.data);
+        setTimeout(() => {
+          setQrCode(blobUrl);
+          setIsLoading(false);
+        }, 5000);
+      }
     }
     catch (error) {
       console.log(error);
