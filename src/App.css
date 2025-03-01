@@ -1,0 +1,105 @@
+body {
+  background-color: #0B192C;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.App {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.App h1 {
+  text-align: center;
+  color: white;
+}
+
+.input {
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.input input, .input button {
+  padding: 1rem;
+  border-radius: 1rem;
+  border: none;
+}
+
+.input input {
+  width: 30rem;
+  background-color: #9290C3;
+  color: white;
+  font-size: larger;
+}
+
+.input input::placeholder {
+  color: white;
+  opacity: 0.8;
+}
+
+.input input:focus {
+  outline: none;
+  border: none;
+}
+
+.input button {
+  background-color: #46C2CB;
+  color: white;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.input button:active {
+  background-color: #2C74B3;
+}
+
+.output {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.output img {
+  height: 20rem;
+  max-width: 100%;
+  margin-top: 2rem;
+}
+
+/* Media Query for Small Screens */
+@media screen and (max-width: 720px) {
+  .input {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .input input {
+    width: 90%;
+    margin: 1rem;
+  }
+
+  .input button {
+    width: 50%;
+  }
+
+  .output {
+    display: flex;
+    justify-content: center;
+  }
+
+  .output img {
+    height: 15rem;
+    width: auto;
+  }
+}
